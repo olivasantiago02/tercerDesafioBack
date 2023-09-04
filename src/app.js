@@ -17,7 +17,7 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/products/:pid', (req, res) => {
-    const productId = req.params.pid;
+    const productId = parseInt(req.params.pid); // Transformar a número
     const product = productManager.getProductById(productId);
     
     if (product) {
